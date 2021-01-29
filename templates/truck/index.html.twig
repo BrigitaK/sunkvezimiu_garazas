@@ -10,7 +10,7 @@
     <ul>
     {% for truck in trucks %}
         <li>
-        {{truck.maker}}
+        {{truck.maker}}  {{truck.mechanic.name}} {{truck.mechanic.surname}}
         <a href="{{ path('truck_edit', {id: truck.id}) }}">Edit</a>
         <form action="{{ path('truck_delete', {id: truck.id}) }}" method="POST">
         <button type="submit">DELETE</button>

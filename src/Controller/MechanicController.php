@@ -89,9 +89,9 @@ class MechanicController extends AbstractController
         ->getRepository(Mechanic::class)
         ->find($id);
 
-        // if ($mechanic->getOutfits()->count() > 0) {
-        //     return new Response('Šio kūrėjo ištrinti negalima, nes turi gaminių.');
-        // }
+        if ($mechanic->getTrucks()->count() > 0) {
+            return new Response('Šio mechaniko ištrinti negalima, nes turi gaminių.');
+        }
 
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($mechanic);

@@ -16,6 +16,9 @@
         <button type="submit">DELETE</button>
         </form>
         </li>
+        {% for truck in mechanic.trucks %}
+                {{truck.maker}}<br>
+            {% endfor %}
     {% endfor %}
     </ul>
 </div>
