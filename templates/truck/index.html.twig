@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trucks List!{% endblock %}
+
+{% block body %}
+
+    <h1>Trucks in Library ✅</h1>
+
+    List:
+    <ul>
+    {% for truck in trucks %}
+        <li>
+        {{truck.maker}}
+        <a href="{{ path('truck_edit', {id: truck.id}) }}">Edit</a>
+        <form action="{{ path('truck_delete', {id: truck.id}) }}" method="POST">
+        <button type="submit">DELETE</button>
+        </form>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

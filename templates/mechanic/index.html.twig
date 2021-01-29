@@ -12,6 +12,9 @@
         <li>
         {{mechanic.name}} {{mechanic.surname}}
         <a href="{{ path('mechanic_edit', {id: mechanic.id}) }}">Edit</a>
+        <form action="{{ path('mechanic_delete', {id: mechanic.id}) }}" method="POST">
+        <button type="submit">DELETE</button>
+        </form>
         </li>
     {% endfor %}
     </ul>
