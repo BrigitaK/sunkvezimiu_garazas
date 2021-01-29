@@ -1,17 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MechanicController!{% endblock %}
+{% block title %}Mechanics List!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>! ✅</h1>
+    <h1>Mechanics in Library ✅</h1>
 
-    This friendly message is coming from:
-    
+    List:
+    <ul>
+    {% for mechanic in mechanics %}
+        <li>
+        {{mechanic.name}} {{mechanic.surname}}
+        <a href="{{ path('mechanic_edit', {id: mechanic.id}) }}">Edit</a>
+        </li>
+    {% endfor %}
+    </ul>
 </div>
 {% endblock %}
