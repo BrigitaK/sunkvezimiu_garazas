@@ -3,20 +3,21 @@
 {% block title %}Create new Truck!{% endblock %}
 
 {% block body %}
-    <h1>Create new Truck! ✅</h1>
-
-    <form action="{{path('truck_store')}}" method="POST">
-        Maker:<input type="text" name="truck_maker">
-        Plate:<input type="text" name="truck_plate">
-        Make year:<input type="text" name="truck_make_year">
-        Mechanic notices:<textarea name="truck_mechanic_notices"></textarea>
-        <select name="truck_mechanic_id">
-        {% for mechanic in mechanics %}
-        <option value="{{mechanic.id}}">{{mechanic.name}} {{mechanic.surname}}</option>
-        {% endfor %}
-        </select>
-        <button type="submit">Add new Truck</button>
-    </form>
-
-</div>
+    <h1 class="title">Create new Truck!</h1>
+    <div class="list">
+        <form action="{{path('truck_store')}}" method="POST">
+            <div class="create-name">Maker:<input class="input" type="text" name="truck_maker"></div>
+            <div class="create-name">Plate:<input class="input" type="text" name="truck_plate"></div>
+            <div class="create-name">Make year:<input class="input" type="text" name="truck_make_year"></div>
+            <div class="create-name">Mechanic notices:<textarea class="input" name="truck_mechanic_notices"></textarea></div>
+            <select class="select" name="truck_mechanic_id">
+            {% for mechanic in mechanics %}
+            <option value="{{mechanic.id}}">{{mechanic.name}} {{mechanic.surname}}</option>
+            {% endfor %}
+            </select>
+            <div class="add-btn">
+                <button class="add" type="submit">Add new Truck</button>
+            </div>
+        </form>
+    </div>
 {% endblock %}

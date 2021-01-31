@@ -4,22 +4,25 @@
 
 {% block body %}
 
-    <h1>Mechanics in Library ✅</h1>
+    <h1 class="title">Mechanics in Library ✅</h1>
 
-    List:
+    <div class="title2">Mechanics list:</div>
     <ul>
     {% for mechanic in mechanics %}
-        <li>
-        {{mechanic.name}} {{mechanic.surname}}
-        <a href="{{ path('mechanic_edit', {id: mechanic.id}) }}">Edit</a>
-        <form action="{{ path('mechanic_delete', {id: mechanic.id}) }}" method="POST">
-        <button type="submit">DELETE</button>
-        </form>
-        </li>
-        {% for truck in mechanic.trucks %}
-                {{truck.maker}}<br>
+        <div class="list">
+            <div class="name-surname">{{mechanic.name}} {{mechanic.surname}}</div>
+            {% for truck in mechanic.trucks %}
+                <div class="count">{{truck.maker}}</div>
             {% endfor %}
+            <div class="delete-btn">
+                <form action="{{ path('mechanic_delete', {id: mechanic.id}) }}" method="POST">
+                <button class="delete" type="submit">DELETE</button>
+                </form>
+            </div>
+            <div class="edit-btn">
+                <a  class="edit" href="{{ path('mechanic_edit', {id: mechanic.id}) }}">Edit mechanic</a>
+            </div>
+        </div>
     {% endfor %}
     </ul>
-</div>
 {% endblock %}

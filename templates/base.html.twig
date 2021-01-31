@@ -3,12 +3,37 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link href="{{ asset('css/layout.css') rel="stylesheet"}}"
+        <link href="{{ asset('css/layout.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/reset.css') }}" rel="stylesheet"/>
         {% block stylesheets %}{% endblock %}
 
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+    <div class="block">
+        <div class="circle"></div>
+        <div class="circle2"></div>
+        <div class="container"> 
+            <div class="menu">
+                <div class="logo-full">
+                    <img class="logo-img" src="{{ asset('img/truck.png')}}" alt="truck">
+                    <div class="name">
+                        <a class="name1" href="#">Truck</a>
+                        <a  class="name2" href="#">garage</a>
+                    </div>
+                </div>
+                <nav>
+                <a href="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/index.php/mechanic">Mechanics</a>
+                <a href="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/index.php/mechanic/create">Add mechanic</a>
+                <a href="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/index.php/truck">Trucks</a>
+                <a href="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/index.php/truck/create">Add truck</a>
+                <a class="loggout" href="login/logout">Atsijungti</a>
+                </nav>
+            </div>
+            <div class="container1">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+    </div>
     </body>
 </html>
