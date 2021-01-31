@@ -3,7 +3,7 @@
 {% block title %}Edit Mechanic!{% endblock %}
 
 {% block body %}
-    <h1 class="title">Edit Mechanic! ✅</h1>
+    <h1 class="title">Edit Mechanic!</h1>
     <div class="list">
         <form action="{{path('mechanic_update', {id: mechanic.id})}}" method="POST">
             <div class="create-name">Name: <input class="input" type="text" name="mechanic_name" value="{{mechanic.name}}"></div>
