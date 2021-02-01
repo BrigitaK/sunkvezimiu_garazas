@@ -165,7 +165,7 @@ body {
         }
         .title2 {
             margin-bottom: 10px;
-            font-size: 20px;
+            font-size: 18px;
         }
         .list {
             display: inline-block;
@@ -319,4 +319,18 @@ body {
             display: inline-block;
             float: left;
             width: 30%;
+        }
+        .select-filter {
+            display: inline-block;
+            float: left;
+            height: 29px;
+            border: 2px solid #E5E5E5;
+            border-radius: 5px;
+            outline: none;
+            width: 20%;
+        }
+        .title-filter {
+            display: inline-block;
+            float: left;
+            width: 17%;
         }

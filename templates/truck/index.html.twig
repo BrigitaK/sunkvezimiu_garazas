@@ -5,7 +5,23 @@
 {% block body %}
 
     <h1 class="title">Trucks in Library</h1>
-    <div class="title2">Trucks list:</div>
+    <div class="sort">
+        <div class="title2 title-filter">List filter by:</div>
+        <form action="{{ path('truck_index')}}" method="GET">
+            <select class="select-filter" name="mechanic_id">
+            <option value="0">View All</option>
+                {% for mechanic in mechanics %}
+                <option value="{{mechanic.id}}" {% if mechanicId == mechanic.id %} selected {% endif %}>{{mechanic.name}} {{mechanic.surname}}</option>
+                {% endfor %}
+            </select>
+            <div class="sort-btn">
+                <button class="edit" type="submit">Filter it!</button>
+            </div>
+        </form>
+        <div class="clear-btn">
+            <a class="delete" href="{{ path('truck_index')}}">clear</a>
+        </div>
+    </div>
     <ul>
     {% for truck in trucks %}
         <div class="list">
