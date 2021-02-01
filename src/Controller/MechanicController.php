@@ -13,14 +13,24 @@ class MechanicController extends AbstractController
     /**
      * @Route("/mechanic", name="mechanic_index", methods={"GET"})
      */
-    public function index(): Response
+    public function index(Request $r): Response
     {
+        // $mechanics = $this->getDoctrine()
+        // ->getRepository(Mechanic::class)
+        // ->findAll();
+
         $mechanics = $this->getDoctrine()
-        ->getRepository(Mechanic::class)
-        ->findAll();
+        ->getRepository(Mechanic::class);
+        if('name_az' == $r->query->get('sort')) {
+            $mechanics = $mechanics->findBy([],['name' => 'asc']);
+        }
+        else {
+            $mechanics = $mechanics->findAll();
+        }
 
         return $this->render('mechanic/index.html.twig', [
             'mechanics' => $mechanics,
+            'sortBy' => $r->query->get('sort') ?? 'default'
         ]);
     }
     /**
