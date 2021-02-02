@@ -17,6 +17,8 @@ class TruckController extends AbstractController
      */
     public function index(Request $r): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         // $trucks = $this->getDoctrine()
         // ->getRepository(Truck::class)
         // ->findAll();
@@ -46,6 +48,8 @@ class TruckController extends AbstractController
      */
     public function create(Request $r): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        
         $truck_maker = $r->getSession()->getFlashBag()->get('truck_maker', []);
         $truck_plate = $r->getSession()->getFlashBag()->get('truck_plate', []);
         $truck_make_year = $r->getSession()->getFlashBag()->get('truck_make_year', []);

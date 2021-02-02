@@ -16,6 +16,7 @@ class MechanicController extends AbstractController
      */
     public function index(Request $r): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         // $mechanics = $this->getDoctrine()
         // ->getRepository(Mechanic::class)
         // ->findAll();
@@ -40,6 +41,8 @@ class MechanicController extends AbstractController
      */
     public function create(Request $r): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        
         $mechanic_name = $r->getSession()->getFlashBag()->get('mechanic_name', []);
         $mechanic_surname = $r->getSession()->getFlashBag()->get('mechanic_surname', []);
 
