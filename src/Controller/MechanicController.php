@@ -23,7 +23,7 @@ class MechanicController extends AbstractController
         $mechanics = $this->getDoctrine()
         ->getRepository(Mechanic::class);
         if('name_az' == $r->query->get('sort')) {
-            $mechanics = $mechanics->findBy([],['name' => 'asc']);
+            $mechanics = $mechanics->findBy([],['name' => 'asc', 'surname' => 'asc']);
         }
         else {
             $mechanics = $mechanics->findAll();

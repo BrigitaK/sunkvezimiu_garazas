@@ -22,12 +22,12 @@ class TruckController extends AbstractController
        
         $mechanics = $this->getDoctrine()
         ->getRepository(Mechanic::class)
-        ->findAll();
+        ->findBy([],['name' => 'asc','surname' => 'asc']);
 
         $trucks = $this->getDoctrine()
         ->getRepository(Truck::class);
         if(null !== $r->query->get('mechanic_id')){
-            $trucks = $trucks->findBy(['mechanic_id' => $r->query->get('mechanic_id')]);
+            $trucks = $trucks->findBy(['mechanic_id' => $r->query->get('mechanic_id')], ['maker' => 'asc']);
         }
         else {
             $trucks = $trucks->findAll();
@@ -46,7 +46,7 @@ class TruckController extends AbstractController
     {
         $mechanics = $this->getDoctrine()
         ->getRepository(Mechanic::class)
-        ->findAll();
+        ->findBy([],['name' => 'asc']);
 
         return $this->render('truck/create.html.twig', [
             'mechanics' => $mechanics,
@@ -86,7 +86,7 @@ class TruckController extends AbstractController
 
         $mechanics = $this->getDoctrine()
         ->getRepository(Mechanic::class)
-        ->findAll();
+        ->findBy([],['name' => 'asc']);
 
         return $this->render('truck/edit.html.twig', [
             'truck' => $truck,
