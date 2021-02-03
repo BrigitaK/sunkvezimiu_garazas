@@ -89,8 +89,8 @@ class TruckController extends AbstractController
         $truck->
         setMaker($r->request->get('truck_maker'))->
         setPlate($r->request->get('truck_plate'))->
-        setMakeYear($r->request->get('truck_make_year'))->
-        setMechanicNotices($r->request->get('truck_mechanic_notices'))->
+        setMakeYear((int)$r->request->get('truck_make_year'))->
+        setMechanicNotices((int)$r->request->get('truck_mechanic_notices'))->
         setMechanic($mechanic);
        
         $errors = $validator->validate($truck);
