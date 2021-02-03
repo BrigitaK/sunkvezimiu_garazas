@@ -1,6 +1,26 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href="{{ asset('css/layout.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/reset.css') }}" rel="stylesheet"/>
+        {% block stylesheets %}{% endblock %}
 
-{% block title %}Log in!{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+    {% if errors is defined and errors|length > 0 %}
+    {% include 'msg/validation.html.twig' %}
+    {% endif %}
+    {% if success is defined and success|length > 0 %}
+    {% include 'msg/success.html.twig' %}
+    {% endif %}
+    <div class="block">
+        <div class="circle"></div>
+        <div class="circle2"></div>
+        <div class="container"> 
+            <div class="container-log">
 
 {% block body %}
 <form method="post">
@@ -19,7 +39,7 @@
     {% endif %}
 
     <h1 class="title h3 mb-3 font-weight-normal">Please sign in</h1>
-    <div class="list">
+    <div class="list list-log">
         <label class="create-name" for="inputEmail">Email
         <input class="input" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus></label>
         <label class="create-name" for="Password">Password
@@ -33,3 +53,9 @@
     </div>
 </form>
 {% endblock %}
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
+
