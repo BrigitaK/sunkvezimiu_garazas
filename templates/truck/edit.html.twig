@@ -9,7 +9,7 @@
             <div class="create-name">Maker:<input class="input" type="text" name="truck_maker" value="{{truck.maker}}"></div>
             <div class="create-name">Plate:<input class="input" type="text" name="truck_plate" value="{{truck.plate}}"></div>
             <div class="create-name">Make year:<input class="input" type="text" name="truck_make_year" value="{{truck.makeYear}}"></div>
-            <div class="create-name">Machanic notices:<textarea class="input" name="truck_mechanic_notices">{{truck.mechanicNotices}}</textarea></div>
+            <div class="create-name">Machanic notices:<textarea class="input" name="truck_mechanic_notices" id="summernote">{{truck.mechanicNotices}}</textarea></div>
             <select class="select" name="truck_mechanic_id">
             {% for mechanic in mechanics %}
             <option value="{{mechanic.id}}" {% if mechanic.id == truck.mechanicId %} selected {% endif %}>
