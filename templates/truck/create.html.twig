@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1 class="title">Create new Truck!</h1>
-    <div class="list">
+    <div class="list-p">
         <form action="{{path('truck_store')}}" method="POST">
             <div class="create-name">Maker:<input class="input" type="text" name="truck_maker" value="{{ truck_maker }}"></div>
             <div class="create-name">Plate:<input class="input" type="text" name="truck_plate" value="{{ truck_plate }}"></div>

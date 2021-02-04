@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1 class="title">Create new Mechanic!</h1>
-    <div class="list">
+    <div class="list-p">
         <form action="{{path('mechanic_store')}}" method="POST">
             <div class="create-name">Name: <input class="input" type="text" name="mechanic_name" value="{{ mechanic_name }}"></div>
             <div class="create-surname">Surname: <input class="input" type="text" name="mechanic_surname" value="{{ mechanic_surname }}"></div>

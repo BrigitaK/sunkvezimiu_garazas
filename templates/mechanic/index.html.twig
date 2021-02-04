@@ -23,9 +23,8 @@
                 <a class="delete" action="{{ path('mechanic_index')}}">clear</a>
             </div>
     </div>
-    <ul>
     {% for mechanic in mechanics %}
-        <div class="list">
+        <div class="list-p">
             <div class="name-surname">{{mechanic.name}} {{mechanic.surname}}</div>
             {% for truck in mechanic.trucks %}
                 <div class="count">{{truck.maker}}</div>
@@ -40,5 +39,4 @@
             </div>
         </div>
     {% endfor %}
-    </ul>
 {% endblock %}

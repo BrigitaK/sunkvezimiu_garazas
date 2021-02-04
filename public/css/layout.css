@@ -38,7 +38,15 @@ body {
     position: relative;
     background-color: #620808;
 }
-.container {
+.block-login {
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    background-color: #353b5d;
+}
+.container-block {
     display: block;
     float: left;
     background-color: #620808;
@@ -48,7 +56,28 @@ body {
     border-radius: 20px;
     position: absolute;
 }
-    .container .menu {
+.container-block-login {
+    display: block;
+    float: left;
+    width: 100%;
+    margin-top: 80px;
+    position: absolute;
+}
+.nav-user {
+    border: 1px solid grey;
+    display: inline-block;
+    margin-left: 20px;
+    padding: 5px;
+    border-radius: 4px;
+    color: #ffff;
+    text-decoration: none;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 5px;
+}
+    .container-block .menu {
         width: 180px;
         float:left;
         padding-top: 55px;
@@ -57,25 +86,35 @@ body {
         border-bottom-left-radius: 20px;
         border-top-left-radius: 20px;
     }
-    .container .menu .logo-full {
+    .container1-login {
+        width:100%;
+        float: left;
+        background-color: #fff;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-left: 1px solid #E5E5E5;
+        border-radius: 5px;
+        padding-bottom: 70px;
+    }
+    .container-block .menu .logo-full {
         display: inline-block;
         width: 100%;
         max-width: 180px;
     }
-    .container .menu .logo-img {
+    .container-block .menu .logo-img {
         display: inline-block;
         float: left;
         width: 30%;
         margin-left: 20px;
     }
-    .container .menu .name {
+    .container-block .menu .name {
         display: inline-block;
         float: left;
         text-decoration: none;
         width: 50%;
         margin-top: 10px;
     }
-    .container .menu .name .name1 {
+    .container-block .menu .name .name1 {
         text-decoration: none;
         width: 50%;
         color: #ebebeb;
@@ -84,7 +123,7 @@ body {
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
     }
-    .container .menu .name .name2 {
+    .container-block .menu .name .name2 {
         text-decoration: none;
         width: 50%;
         color: #ebebeb;
@@ -99,13 +138,13 @@ body {
         margin-left: 10px;
         margin-top: 30px;
     }
-    nav a:first-child {
+    nav .nav-a:first-child {
         margin-top: 30px;
     }
-    nav a:last-child {
+    nav .nav-a:last-child {
         margin-bottom: 30px;
     }
-    nav a {
+    nav .nav-a {
         display: inline-block;
         float: left;
         margin-left: 30px;
@@ -119,7 +158,7 @@ body {
         margin-top: 5px;
         padding: 5px 0;
     }
-    nav > a::after {
+    nav > .nav-a::after {
         display: inline-block;
         content: '';
         height: 1px;
@@ -130,27 +169,35 @@ body {
         right: 50%;
         transition: all 0.2s;
     }
-    nav > a:hover::after {
+    nav > .nav-a:hover::after {
         left: 0;
         right: 0;
     }
     .container1 {
         width:calc(100% - 180px);
         float: left;
-        min-height: 345px;
+        min-height: 445px;
         background-color: #fff;
         padding-left: 20px;
         padding-right: 20px;
         border-left: 1px solid #E5E5E5;
         border-bottom-right-radius: 20px;
         border-top-right-radius: 20px;
-        padding-bottom: 70px;
+        padding-bottom: 60px;
     }
         .title {
             text-align: center;
             font-weight: 400;
             margin: 70px 0 30px;
             position: relative;
+        }
+        .title-login {
+            text-align: center;
+            font-weight: 600;
+            margin: 70px 0 30px;
+            position: relative;
+            padding-bottom: 20px;
+            font-size: 37px;
         }
         .title::after {
             width: 100px;
@@ -167,14 +214,14 @@ body {
             margin-bottom: 10px;
             font-size: 18px;
         }
-        .list {
+        .list-p {
             display: inline-block;
             float: left;
             width: 100%;
             border-bottom: 1px solid #353b5d;
             margin-top: 10px;
         }
-        .list:last-child {
+        .list-p:last-child {
             border: none;
         }
         .name-surname {
@@ -200,6 +247,16 @@ body {
             text-transform: uppercase;
             font-size: 15px;
             background-color: #b2b2b2;
+            color: #fff;
+        }
+        .sign {
+            text-decoration: none;
+            border: 1px solid #E5E5E5;
+            border-radius: 5px;
+            padding: 5px 40px;
+            line-height: 30px;
+            font-size: 20px;
+            background-color: #9b9b9b;
             color: #fff;
         }
         .delete {
@@ -238,18 +295,16 @@ body {
         .delete-btn{
             display: inline-block;
             float:right;
-            width:20%;
+            margin-left: 10px;
         }
         .edit-btn {
             display: inline-block;
             float:right;
-            width:21%;
             margin-top: 5px;
         }
         .add-btn{
             display: inline-block;
             float:left;
-            width:27%;
             padding-top: 24px;
         }
         .create-name, .create-surname {
@@ -270,7 +325,7 @@ body {
         }
         .select {
             margin-bottom: 20px;
-            height: 29px;
+            height: 32px;
             border: 2px solid #E5E5E5;
             border-radius: 5px;
             outline: none;
@@ -366,4 +421,33 @@ body {
         }
         .list-log {
             margin-left: 85px;
+        }
+        .create-input-login {
+            display: block;
+            width: 70%;
+            font-size: 20px;
+            line-height: 25px;
+            margin-bottom: 10px;
+            margin-right: 40px;
+            margin-left: auto;
+        }
+        .create-agree {
+            display: block;
+            width: 100%;
+            font-size: 20px;
+            line-height: 25px;
+            margin-bottom: 10px;
+        }
+        .create-check {
+            margin-left: 10px;
+        }
+        .left{
+            margin-right: 20px;
+        }
+        .input-align {
+            text-align: center;
+            line-height: 40px;
+        }
+        .btn-align {
+            text-align: center;
         }

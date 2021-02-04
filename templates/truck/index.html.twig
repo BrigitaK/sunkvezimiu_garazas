@@ -22,9 +22,8 @@
             <a class="delete" href="{{ path('truck_index')}}">clear</a>
         </div>
     </div>
-    <ul>
     {% for truck in trucks %}
-        <div class="list">
+        <div class="list-p">
             <div class="name-prop">{{truck.maker}} <span class="name-prop1">Mechanic: {{truck.mechanic.name}} {{truck.mechanic.surname}}</span></div>
             <div class="delete-btn">
                 <form action="{{ path('truck_delete', {id: truck.id}) }}" method="POST">
@@ -37,5 +36,4 @@
         </div>
         
     {% endfor %}
-    </ul>
 {% endblock %}

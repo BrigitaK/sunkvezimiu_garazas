@@ -31,7 +31,7 @@
     <div class="block">
         <div class="circle"></div>
         <div class="circle2"></div>
-        <div class="container"> 
+        <div class="container-block"> 
             <div class="menu">
                 <div class="logo-full">
                     <img class="logo-img" src="{{ asset('img/truck.png')}}" alt="truck">
@@ -41,11 +41,12 @@
                     </div>
                 </div>
                 <nav>
-                <a href="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/index.php/mechanic">Mechanics</a>
-                <a href="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/index.php/mechanic/create">Add mechanic</a>
-                <a href="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/index.php/truck">Trucks</a>
-                <a href="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/index.php/truck/create">Add truck</a>
-                <a class="loggout" href="{{ path('app_logout') }}">Atsijungti</a>
+                <a class="nav-a" href="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/index.php/mechanic">Mechanics</a>
+                <a class="nav-a" href="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/index.php/mechanic/create">Add mechanic</a>
+                <a class="nav-a" href="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/index.php/truck">Trucks</a>
+                <a class="nav-a" href="http://localhost:8888/dashboard/sunkvezimiu_garazas/public/index.php/truck/create">Add truck</a>
+                <a class="loggout nav-a " href="{{ path('app_logout') }}">Logout</a>
+                <a class="nav-user" href="#">{{ app.user.username }}</a>
                 </nav>
             </div>
             <div class="container1">
